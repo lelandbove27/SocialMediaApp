@@ -1,4 +1,4 @@
-# Meme-App
+# Social Media App
 
 Completed Steps
 - Create the database
