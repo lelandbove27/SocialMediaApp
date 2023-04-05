@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+
+    </body>
+</html>
+
+<div>
+    <hr></hr>
+    <img id="image-preview" src={imageSrc} alt="your-upload" accept="image/*" width={200} height={200}></img>
+    <form target="_blank" action="http://192.168.0.113:8080/uploadImage" method="POST" encType="multipart/form-data">
+      <input name="image" id='image-input' type="file" onChange={(event) => {previewImage(event); setCurrentFile(event.target.files[0])}}></input>
+      <button id="uploadImageButton" type="submit" onClick={event => uploadImage(event, currentFile)}>Upload Image</button>
+    </form>
+  </div>
