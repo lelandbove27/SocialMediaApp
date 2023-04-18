@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        
+      <meta charset="UTF-8"/>  
+      <title>Post New Image</title>
+      <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
+      <header>
+        <h1>Post a new image</h1>
+      </header>
+      <main>
+        <img id="image-preview" src="" alt="your-upload" accept="image/*" width={200} height={200}></img>
+        <input name="image" id='image-input' type="file"/>
+        <button id="upload-image-button" type="submit">Upload</button>
+      </main>
 
+      <script src="postImage.js"></script>
     </body>
 </html>
-
-<div>
-    <hr></hr>
-    <img id="image-preview" src={imageSrc} alt="your-upload" accept="image/*" width={200} height={200}></img>
-    <form target="_blank" action="http://192.168.0.113:8080/uploadImage" method="POST" encType="multipart/form-data">
-      <input name="image" id='image-input' type="file" onChange={(event) => {previewImage(event); setCurrentFile(event.target.files[0])}}></input>
-      <button id="uploadImageButton" type="submit" onClick={event => uploadImage(event, currentFile)}>Upload Image</button>
-    </form>
-  </div>

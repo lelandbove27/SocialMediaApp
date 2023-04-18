@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(fileUpload());
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(cors());
 app.options('*', cors());
 
 //let jsonParser = bodyParser.json();
@@ -19,7 +20,7 @@ app.get('/images', (req, res) => {
 app.post('/uploadImage', (req, res) => {
     const { image } = req.files;
     if(!image) return res.sendStatus(400);
-    image.mv('/Users/lelan/OneDrive/Desktop/Meme-App/server' + '/uploadImage/' + image.name);
+    image.mv('/Users/lelan/OneDrive/Desktop/SocialMediaApp/server' + '/uploadImage/' + image.name);
     res.set('Access-Control-Allow-Origin', '*');
     return res.sendStatus(200);
 });
